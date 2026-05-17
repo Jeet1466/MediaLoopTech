@@ -15,12 +15,12 @@ const stats = [
 ];
 
 const services = [
-  { title: "Performance Marketing", desc: "Meta, Google & YouTube ads engineered for maximum ROAS.", icon: "📈", color: "var(--brand-magenta)", href: "/services#performance" },
-  { title: "Web Engineering", desc: "High-performance websites & apps built for speed and conversion.", icon: "⚡", color: "var(--brand-orange)", href: "/services#web" },
-  { title: "SEO & Content", desc: "Dominate search rankings with data-driven strategies that last.", icon: "🔍", color: "var(--brand-violet)", href: "/services#seo" },
-  { title: "Social Media", desc: "Consistent, compelling presence managed end-to-end.", icon: "📱", color: "var(--brand-cyan)", href: "/services#social" },
-  { title: "Brand Strategy", desc: "Distinctive identity systems that command premium positioning.", icon: "🎯", color: "#10B981", href: "/services#brand" },
-  { title: "Video Production", desc: "Cinematic ad creatives and brand films that stop the scroll.", icon: "🎬", color: "#F59E0B", href: "/services#video" },
+  { title: "Performance Marketing", desc: "Meta, Google & YouTube ads engineered for maximum ROAS.", image: "/PER.png", color: "var(--brand-magenta)", href: "/services#performance" },
+  { title: "Web Engineering", desc: "High-performance websites & apps built for speed and conversion.", image: "/WEB.png", color: "var(--brand-orange)", href: "/services#web" },
+  { title: "SEO & Content", desc: "Dominate search rankings with data-driven strategies that last.", image: "/SEO.png", color: "var(--brand-violet)", href: "/services#seo" },
+  { title: "Social Media", desc: "Consistent, compelling presence managed end-to-end.", image: "/Soc.png", color: "var(--brand-cyan)", href: "/services#social" },
+  { title: "Brand Strategy", desc: "Distinctive identity systems that command premium positioning.", image: "/Brand.png", color: "#10B981", href: "/services#brand" },
+  { title: "Video Production", desc: "Cinematic ad creatives and brand films that stop the scroll.", image: "/Vid.png", color: "#F59E0B", href: "/services#video" },
 ];
 
 const logos = ["Fintech Co.", "Retail Brand", "SaaS Corp", "PropTech", "EduBrand", "HealthCo", "Fintech Co.", "Retail Brand", "SaaS Corp", "PropTech", "EduBrand", "HealthCo"];
@@ -42,8 +42,8 @@ export default function HomeClient() {
         <div className="blob" style={{ width: 700, height: 700, top: -150, right: -200, background: "radial-gradient(circle, rgba(236,12,170,0.10) 0%, transparent 70%)", animationDuration: "10s" }} />
         <div className="blob" style={{ width: 500, height: 500, bottom: -100, left: -150, background: "radial-gradient(circle, rgba(255,107,43,0.08) 0%, transparent 70%)", animationDelay: "3s" }} />
 
-        <div className="container" style={{ position: "relative", zIndex: 1, padding: "80px var(--margin-desktop)" }}>
-          <div className="flex flex-col items-center text-center" style={{
+        <div className="container hero-container-pad" style={{ position: "relative", zIndex: 1, padding: "80px var(--margin-desktop)" }}>
+          <div className="flex flex-col items-center text-center hero-glass-card" style={{
             background: "rgba(255, 255, 255, 0.6)",
             backdropFilter: "blur(24px)",
             WebkitBackdropFilter: "blur(24px)",
@@ -137,7 +137,7 @@ export default function HomeClient() {
       {/* ── Stats ───────────────────────────────── */}
       <section style={{ padding: "72px 0", background: "#fff" }}>
         <div className="container">
-          <div className="grid md:grid-cols-4 gap-6 text-center sm:grid-cols-2" style={{ gridTemplateColumns: "repeat(4, 1fr)" }}>
+          <div className="stats-grid grid gap-6 text-center" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)" }}>
             {stats.map((s, i) => (
               <div key={i} style={{ padding: "32px 20px", borderRadius: "20px", border: "1px solid var(--outline)", background: "#fff" }}>
                 <div style={{ fontFamily: "Hanken Grotesk, sans-serif", fontWeight: 900, fontSize: "clamp(32px,4vw,52px)", letterSpacing: "-0.03em", marginBottom: "8px", background: "linear-gradient(135deg, #000, #444)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>{s.value}</div>
@@ -163,11 +163,32 @@ export default function HomeClient() {
             <Link href="/services" className="btn-ghost">All Services →</Link>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "24px" }}>
+          <div className="services-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "24px" }}>
             {services.map((s, i) => (
               <Link key={i} href={s.href} style={{ textDecoration: "none" }}>
                 <div className="glass-card" style={{ height: "100%", cursor: "pointer" }}>
-                  <div style={{ fontSize: "32px", marginBottom: "20px" }}>{s.icon}</div>
+                  <div style={{
+                    width: "56px",
+                    height: "56px",
+                    marginBottom: "24px",
+                    position: "relative",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    borderRadius: "16px",
+                    background: "rgba(255, 255, 255, 0.8)",
+                    border: "1px solid rgba(0, 0, 0, 0.05)",
+                    padding: "8px",
+                    boxShadow: "0 8px 20px rgba(0, 0, 0, 0.03)"
+                  }}>
+                    <Image
+                      src={s.image}
+                      alt={s.title}
+                      width={40}
+                      height={40}
+                      style={{ objectFit: "contain" }}
+                    />
+                  </div>
                   <div className="label-sm mb-2" style={{ color: s.color }}>{s.title}</div>
                   <h3 style={{ fontFamily: "Hanken Grotesk, sans-serif", fontWeight: 700, fontSize: "20px", marginBottom: "12px", letterSpacing: "-0.01em" }}>{s.title}</h3>
                   <p style={{ color: "#666", fontSize: "14px", lineHeight: "1.65" }}>{s.desc}</p>
@@ -177,14 +198,7 @@ export default function HomeClient() {
             ))}
           </div>
 
-          <style>{`
-            @media (max-width: 900px) {
-              .services-grid { grid-template-columns: repeat(2, 1fr) !important; }
-            }
-            @media (max-width: 600px) {
-              .services-grid { grid-template-columns: 1fr !important; }
-            }
-          `}</style>
+
         </div>
       </section>
 
@@ -200,7 +214,7 @@ export default function HomeClient() {
             </h2>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "32px" }}>
+          <div className="portfolio-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "32px" }}>
             {[
               { title: "Nova Finance", cat: "FINTECH PLATFORM", img: "/fintech.png", color: "var(--brand-magenta)", result: "+340% Conversions" },
               { title: "Vogue Retail", cat: "LUXURY E-COMMERCE", img: "/ecommerce.png", color: "var(--brand-orange)", result: "4.2x ROAS" },
@@ -230,7 +244,7 @@ export default function HomeClient() {
       {/* ── Why Us ──────────────────────────────── */}
       <section className="section-padding" style={{ background: "#050505", color: "#fff" }}>
         <div className="container">
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "64px", alignItems: "center" }}>
+          <div className="why-us-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "64px", alignItems: "center" }}>
             <div>
               <div className="badge mb-6" style={{ background: "rgba(236,12,170,0.15)", color: "var(--brand-magenta)", border: "1px solid rgba(236,12,170,0.2)" }}>
                 Why Medialooptech

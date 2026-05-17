@@ -74,10 +74,10 @@ export default function Contact() {
             </div>
 
             {/* Form */}
-            <div style={{ background: "#fff", border: "1px solid var(--outline)", borderRadius: "28px", padding: "48px", boxShadow: "var(--shadow-md)" }}>
+            <div className="contact-form-card" style={{ background: "#fff", border: "1px solid var(--outline)", borderRadius: "28px", padding: "48px", boxShadow: "var(--shadow-md)" }}>
               <h2 className="headline-md mb-6">Tell Us About Your Project</h2>
               <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-                <div className="grid md:grid-cols-2 gap-4">
+                <div className="contact-form-grid grid gap-4">
                   <div>
                     <label className="label-sm" style={{ display: "block", marginBottom: "8px", color: "#888" }}>Full Name *</label>
                     <input required className="input-field" type="text" placeholder="Rahul Sharma" value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} />

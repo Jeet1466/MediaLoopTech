@@ -118,7 +118,7 @@ export default function AboutClient() {
       <section className="section-padding" style={{ background: "#050505" }}>
         <div className="container">
           <div
-            className="grid md:grid-cols-2 gap-16 items-center"
+            className="about-mission-grid grid md:grid-cols-2 gap-16 items-center"
           >
             <div>
               <div

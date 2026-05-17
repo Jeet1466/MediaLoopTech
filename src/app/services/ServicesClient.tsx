@@ -113,6 +113,7 @@ function ServiceCard({ s, i }: { s: typeof services[0]; i: number }) {
   return (
     <div
       id={s.id}
+      className="service-detail-card"
       style={{
         display: "grid",
         gridTemplateColumns: "1fr 1fr",

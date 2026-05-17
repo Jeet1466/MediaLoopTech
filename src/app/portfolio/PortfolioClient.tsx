@@ -191,7 +191,7 @@ export default function PortfolioClient() {
                 Moved the Needle
               </span>
             </h1>
-            <Link href="/contact" className="btn-primary">
+            <Link href="/contact" className="btn-primary" style={{ borderRadius: "10px", fontSize: "16px", height: "50px"}}>
               Start a Project →
             </Link>
           </div>

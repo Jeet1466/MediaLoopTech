@@ -14,9 +14,9 @@ export default function Footer() {
     <footer style={{ background: "#050505", color: "#fff", padding: "100px 0 0" }}>
       <div className="container">
         {/* Top Grid */}
-        <div className="grid md:grid-cols-4 gap-12" style={{ paddingBottom: "80px" }}>
+        <div className="footer-grid grid md:grid-cols-4 gap-12" style={{ paddingBottom: "80px" }}>
           {/* Brand */}
-          <div style={{ gridColumn: "span 2" }}>
+          <div className="footer-brand-col" style={{ gridColumn: "span 2" }}>
             <div style={{
               fontFamily: "Hanken Grotesk, sans-serif",
               fontSize: "26px",
