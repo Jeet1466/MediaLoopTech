@@ -1,6 +1,11 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
+import dynamic from "next/dynamic";
+
+const BackgroundRings = dynamic(() => import("@/components/BackgroundRings"), {
+  ssr: false,
+});
 
 const stats = [
   { value: "150+", label: "Campaigns Launched" },
@@ -33,6 +38,7 @@ export default function HomeClient() {
         paddingTop: "76px",
         background: "linear-gradient(170deg, #ffffff 60%, #fdf0f8 100%)",
       }}>
+        <BackgroundRings />
         <div className="blob" style={{ width: 700, height: 700, top: -150, right: -200, background: "radial-gradient(circle, rgba(236,12,170,0.10) 0%, transparent 70%)", animationDuration: "10s" }} />
         <div className="blob" style={{ width: 500, height: 500, bottom: -100, left: -150, background: "radial-gradient(circle, rgba(255,107,43,0.08) 0%, transparent 70%)", animationDelay: "3s" }} />
 
