@@ -35,46 +35,81 @@ export default function HomeClient() {
         alignItems: "center",
         position: "relative",
         overflow: "hidden",
-        paddingTop: "76px",
-        background: "linear-gradient(170deg, #ffffff 60%, #fdf0f8 100%)",
+        paddingTop: "25px",
+        background: "#ffffff",
       }}>
         <BackgroundRings />
         <div className="blob" style={{ width: 700, height: 700, top: -150, right: -200, background: "radial-gradient(circle, rgba(236,12,170,0.10) 0%, transparent 70%)", animationDuration: "10s" }} />
         <div className="blob" style={{ width: 500, height: 500, bottom: -100, left: -150, background: "radial-gradient(circle, rgba(255,107,43,0.08) 0%, transparent 70%)", animationDelay: "3s" }} />
 
         <div className="container" style={{ position: "relative", zIndex: 1, padding: "80px var(--margin-desktop)" }}>
-          <div className="flex flex-col items-center text-center">
-            <div className="badge badge-magenta mb-6 animate-fade-up">
+          <div className="flex flex-col items-center text-center" style={{
+            background: "rgba(255, 255, 255, 0.6)",
+            backdropFilter: "blur(24px)",
+            WebkitBackdropFilter: "blur(24px)",
+            borderRadius: "40px",
+            padding: "80px 40px",
+            border: "1px solid rgba(255, 255, 255, 0.5)",
+            boxShadow: "0 30px 60px rgba(0,0,0,0.05)",
+            maxWidth: "1000px",
+            margin: "0 auto"
+          }}>
+            <div className="badge mb-6 animate-fade-up" style={{
+              border: "1px solid rgba(255, 255, 255, 0.6)",
+              color: "var(--brand-magenta)"
+            }}>
               <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--brand-magenta)", display: "inline-block" }} />
               Performance-First Digital Agency
             </div>
 
-            <h1 className="headline-xl mb-6 animate-fade-up delay-100" style={{ maxWidth: "980px" }}>
-              We Build Brands
-              <br />
-              <span style={{
-                background: "linear-gradient(135deg, var(--brand-magenta) 0%, var(--brand-orange) 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
+            <div style={{
+              maxWidth: "800px",
+              marginBottom: "48px",
+            }}>
+              <h1 className="headline-xl mb-6 animate-fade-up delay-100">
+                We Build Brands
+                <br />
+                <span style={{
+                  background: "linear-gradient(135deg, var(--brand-magenta) 0%, var(--brand-orange) 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                }}>
+                  That Dominate.
+                </span>
+              </h1>
+
+              <p className="body-lg animate-fade-up delay-200" style={{
+                margin: "0 auto",
+                color: "#444"
               }}>
-                That Dominate.
-              </span>
-            </h1>
+                From precision ad campaigns to stunning web experiences — Medialooptech turns strategy into scalable, measurable growth for ambitious brands.
+              </p>
+            </div>
 
-            <p className="body-lg animate-fade-up delay-200" style={{ maxWidth: "620px", marginBottom: "48px" }}>
-              From precision ad campaigns to stunning web experiences — Medialooptech turns strategy into scalable, measurable growth for ambitious brands.
-            </p>
-
-            <div className="flex gap-4 animate-fade-up delay-300" style={{ flexWrap: "wrap", justifyContent: "center" }}>
-              <Link href="/contact" className="btn-primary btn-magenta" style={{ padding: "16px 36px", fontSize: "16px" }}>
+            <div className="flex gap-4 animate-fade-up delay-300" style={{
+              flexWrap: "wrap",
+              justifyContent: "center",
+            }}>
+              <Link href="/contact" className="btn-primary btn-magenta" style={{ padding: "16px 36px", fontSize: "16px", borderRadius: "100px" }}>
                 Start Your Growth →
               </Link>
-              <Link href="/portfolio" className="btn-outline" style={{ padding: "16px 36px", fontSize: "16px" }}>
+              <Link href="/portfolio" className="btn-outline" style={{ padding: "16px 36px", fontSize: "16px", borderRadius: "100px", background: "rgba(255,255,255,0.5)" }}>
                 View Our Work
               </Link>
             </div>
 
-            <div className="flex items-center gap-6 animate-fade-up delay-400" style={{ marginTop: "56px", flexWrap: "wrap", justifyContent: "center" }}>
+            <div className="flex items-center gap-6 animate-fade-up delay-400" style={{
+              marginTop: "56px",
+              flexWrap: "wrap",
+              justifyContent: "center",
+              background: "linear-gradient(170deg, #ffffff 60%, #fdf0f8 100%)",
+              backdropFilter: "blur(24px)",
+              WebkitBackdropFilter: "blur(24px)",
+              borderRadius: "24px",
+              padding: "16px 32px",
+              border: "1px solid rgba(255, 255, 255, 0.6)",
+              boxShadow: "0 10px 30px rgba(0,0,0,0.02)"
+            }}>
               <div className="flex items-center gap-2">
                 <div style={{ display: "flex" }}>
                   {[...Array(5)].map((_, i) => <span key={i} style={{ color: "#F59E0B", fontSize: "14px" }}>★</span>)}
