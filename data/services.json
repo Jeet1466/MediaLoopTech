@@ -1,0 +1,50 @@
+[
+  {
+    "id": "1",
+    "title": "Performance Marketing",
+    "icon": "📈",
+    "color": "#EC0CAA",
+    "active": true,
+    "description": "Meta, Google & YouTube ads engineered for maximum ROAS."
+  },
+  {
+    "id": "2",
+    "title": "Web Engineering",
+    "icon": "⚡",
+    "color": "#FF6B2B",
+    "active": true,
+    "description": "High-performance websites & apps built for speed and conversion."
+  },
+  {
+    "id": "3",
+    "title": "SEO & Content",
+    "icon": "🔍",
+    "color": "#7C3AED",
+    "active": true,
+    "description": "Dominate search rankings with data-driven SEO strategies."
+  },
+  {
+    "id": "4",
+    "title": "Social Media Management",
+    "icon": "📱",
+    "color": "#06B6D4",
+    "active": true,
+    "description": "Full-service social media management end-to-end."
+  },
+  {
+    "id": "5",
+    "title": "Brand Strategy",
+    "icon": "🎯",
+    "color": "#10B981",
+    "active": true,
+    "description": "Distinctive identity systems that define your market position."
+  },
+  {
+    "id": "6",
+    "title": "Video Production",
+    "icon": "🎬",
+    "color": "#F59E0B",
+    "active": true,
+    "description": "Cinematic ad creatives and brand films that stop the scroll."
+  }
+]
