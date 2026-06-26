@@ -94,7 +94,7 @@ export default function AboutClient() {
         />
         <div className="container" style={{ position: "relative", zIndex: 1 }}>
           <div className="badge badge-magenta mb-6">Our Story</div>
-          <h1 className="headline-xl mb-6" style={{ maxWidth: "800px" }}>
+          <h1 className="headline-xl mb-6" style={{ maxWidth: "1000px" }}>
             We Exist to Make
             <br />
             <span

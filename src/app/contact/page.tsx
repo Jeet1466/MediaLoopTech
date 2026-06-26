@@ -43,7 +43,7 @@ export default function Contact() {
             {/* Left */}
             <div>
               <div className="badge badge-magenta mb-6">Let&apos;s Connect</div>
-              <h1 className="headline-xl mb-6" style={{ maxWidth: "520px" }}>
+              <h1 className="headline-xl mb-6" style={{ maxWidth: "1000px" }}>
                 Start Your<br />
                 <span style={{ background: "linear-gradient(135deg, var(--brand-magenta), var(--brand-orange))", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
                   Growth Journey
