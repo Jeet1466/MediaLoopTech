@@ -505,7 +505,7 @@ input, select, textarea { max-width: 100%; }
   }
 
   /* Hero social proof strip */
-  .flex.items-center.gap-6 {
+  .flex.items-center.gap-6:not(nav *) {
     flex-direction: column !important;
     gap: 12px !important;
     padding: 16px !important;
@@ -518,13 +518,15 @@ input, select, textarea { max-width: 100%; }
     height: 1px !important;
   }
 
-  /* Hero CTA buttons stack */
-  .flex.gap-4 {
+  /* Hero CTA buttons stack — exclude nav */
+  main .flex.gap-4,
+  section .flex.gap-4 {
     flex-direction: column !important;
     align-items: center !important;
     width: 100% !important;
   }
-  .btn-primary, .btn-outline {
+  main .btn-primary, main .btn-outline,
+  section .btn-primary, section .btn-outline {
     width: 100% !important;
     justify-content: center !important;
     text-align: center !important;
