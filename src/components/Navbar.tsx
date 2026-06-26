@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -15,6 +15,11 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
+  const router = useRouter();
+
+  const handleNavClick = (href: string) => {
+    if (pathname === href) router.refresh();
+  };
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 20);
@@ -80,6 +85,7 @@ export default function Navbar() {
                   <Link
                     href={link.href}
                     className="label-sm"
+                    onClick={() => handleNavClick(link.href)}
                     style={{
                       color: active ? "#000" : "#888",
                       textDecoration: "none",
@@ -114,6 +120,7 @@ export default function Navbar() {
                 border: "none",
                 cursor: "pointer",
                 padding: "8px",
+                marginRight: "8px",
                 display: "none",
               }}
               className="hamburger-btn"

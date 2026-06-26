@@ -36,10 +36,17 @@ export default function Contact() {
 
   return (
     <div style={{ paddingTop: "76px" }}>
+      <style>{`
+        @media (max-width: 767px) {
+          .contact-two-col { grid-template-columns: 1fr !important; gap: 40px !important; }
+          .contact-form-card { padding: 28px 20px !important; border-radius: 20px !important; }
+          .contact-form-grid { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
       <section className="section-padding" style={{ background: "linear-gradient(170deg, #fff 60%, #fdf0f8 100%)", position: "relative", overflow: "hidden" }}>
         <div className="blob" style={{ width: 500, height: 500, top: -100, right: -100, background: "radial-gradient(circle, rgba(236,12,170,0.08) 0%, transparent 70%)" }} />
         <div className="container" style={{ position: "relative", zIndex: 1 }}>
-          <div className="grid md:grid-cols-2 gap-16 items-start">
+          <div className="contact-two-col grid md:grid-cols-2 gap-16 items-start" style={{ gridTemplateColumns: "1fr 1fr" }}>
             {/* Left */}
             <div>
               <div className="badge badge-magenta mb-6">Let&apos;s Connect</div>
