@@ -17,17 +17,23 @@ export default function Navbar() {
   const pathname = usePathname();
   const router = useRouter();
 
-  const handleNavClick = (href: string) => {
-    if (pathname === href) router.refresh();
-  };
-
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handler);
     return () => window.removeEventListener("scroll", handler);
   }, []);
 
+  // Close drawer on route change
   useEffect(() => setMenuOpen(false), [pathname]);
+
+  const handleMobileNavClick = (href: string) => {
+    setMenuOpen(false);
+    if (pathname === href) router.refresh();
+  };
+
+  const handleDesktopNavClick = (href: string) => {
+    if (pathname === href) router.refresh();
+  };
 
   return (
     <>
@@ -85,7 +91,7 @@ export default function Navbar() {
                   <Link
                     href={link.href}
                     className="label-sm"
-                    onClick={() => handleNavClick(link.href)}
+                    onClick={() => handleDesktopNavClick(link.href)}
                     style={{
                       color: active ? "#000" : "#888",
                       textDecoration: "none",
@@ -120,7 +126,6 @@ export default function Navbar() {
                 border: "none",
                 cursor: "pointer",
                 padding: "8px",
-                marginRight: "8px",
                 display: "none",
               }}
               className="hamburger-btn"
@@ -153,6 +158,7 @@ export default function Navbar() {
           <Link
             key={link.href}
             href={link.href}
+            onClick={() => handleMobileNavClick(link.href)}
             style={{
               fontFamily: "Hanken Grotesk, sans-serif",
               fontSize: "36px",
@@ -171,6 +177,7 @@ export default function Navbar() {
         <Link
           href="/contact"
           className="btn-magenta btn-primary"
+          onClick={() => handleMobileNavClick("/contact")}
           style={{ marginTop: "16px" }}
         >
           Start a Project →
@@ -180,6 +187,7 @@ export default function Navbar() {
       <style>{`
         @media (max-width: 767px) {
           .hamburger-btn { display: block !important; }
+          .mobile-hidden { display: none !important; }
         }
       `}</style>
     </>
